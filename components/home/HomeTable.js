@@ -1,29 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 const HomeTable = ({ title, jobs }) => {
+  const jobsCopy = [...jobs];
+
   return (
-    <table className="table table-hover">
+    <table id="home-table" className="table table-hover">
       <thead>
         <tr>
           <Link href="/jobs">
             <th
-              className="d-flex justify-content-between"
+              className="d-flex justify-content-between header-container"
               scope="col"
-              style={{ cursor: "pointer" }}
             >
-              <span>{title}</span>
-              <span>+</span>
+              <span className="title">{title}</span>
+              <span className="icon">+</span>
             </th>
           </Link>
         </tr>
       </thead>
       <tbody>
-        {jobs.splice(0, 4).map((job, index) => {
+        {jobsCopy.splice(0, 3).map((job, index) => {
           return (
             <tr key={index}>
               <td style={{ cursor: "pointer", fontSize: "12px" }}>
-                {job.title}
+                <p>{job.title}</p>
               </td>
             </tr>
           );

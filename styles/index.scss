@@ -1,0 +1,23 @@
+#home {
+  #home-table {
+    .header-container {
+      cursor: pointer;
+    }
+    .icon {
+      color: #ccc;
+    }
+    .header-container:hover {
+      .title {
+        color: #dc143c;
+      }
+      .icon {
+        color: black;
+        font-weight: 900;
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 11px;
+    }
+  }
+}
