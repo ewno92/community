@@ -36,8 +36,8 @@ export default function Home(props) {
 
       <Row className="py-4">
         {menu.map((item) => (
-          <Col className="d-flex justify-content-center py-2">
-            <div style={{ width: "250px" }}>
+          <Col md={4} className="d-flex justify-content-center py-2">
+            <div className="w-100">
               <HomeTable title={item.title} jobs={props.jobs} />
             </div>
           </Col>

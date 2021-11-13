@@ -5,7 +5,7 @@ const HomeTable = ({ title, jobs }) => {
   const jobsCopy = [...jobs];
 
   return (
-    <table id="home-table" className="table table-hover">
+    <table id="home-table" className="table">
       <thead>
         <tr>
           <Link href="/jobs">
