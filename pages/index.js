@@ -1,7 +1,8 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import HomeTable from "../components/HomeTable";
 export default function Home(props) {
-  console.log(props);
   return (
     <Container>
       <Head>
@@ -11,15 +12,22 @@ export default function Home(props) {
       </Head>
 
       <Row>
-        <h1>구인</h1>
-        <Col></Col>
+        <div style={{ width: "250px" }}>
+          <HomeTable title="구인" jobs={props.jobs} />
+        </div>
+        <div style={{ width: "250px" }}>
+          <HomeTable title="사고&팔고" jobs={props.jobs} />
+        </div>
+        <div style={{ width: "250px" }}>
+          <HomeTable title="부동산" jobs={props.jobs} />
+        </div>
       </Row>
     </Container>
   );
 }
 //fetch before rednering
 export async function getServerSideProps(context) {
-  const res = await fetch("https://korean-community.herokuapp.com/find-jobs");
-  const data = await res.json();
-  return { props: { jobs: data } };
+  const res = await fetch("https://korean-community.herokuapp.com/find-jobs/1");
+  const jobs = await res.json();
+  return { props: { jobs } };
 }
