@@ -145,7 +145,7 @@ input[type='radio'] {
 }
 .required,
 textarea.required {
-	background-image: url(../public/require.png) !important;
+	background-image: url(../public/img/require.png) !important;
 	background-repeat: no-repeat !important;
 	background-position: right top !important;
 }
@@ -479,7 +479,10 @@ textarea {
 .col-form-label {
 	font-weight: 700;
 }
-
+// @import './spacing.scss';
 @import './index.scss';
 @import './jobs.scss';
 @import './board.scss';
+@import './nariya.scss';
+
+@import './theme.scss';

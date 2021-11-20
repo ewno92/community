@@ -1,20 +1,12 @@
 import Head from 'next/head';
 import axios from 'axios';
-// import Board from '../../../components/Board';
+import Board from '../../../components/Board';
 
 const Index = ({ posts }) => {
 	const categories = ['Los Angeles', 'San Diego'];
 	return (
 		<>
-			<ul>
-				{posts.map((post, index) => {
-					return (
-						<li key={index}>
-							<a href={`/jobs/ca/la/post/${post.id}`}>{post.title}</a>
-						</li>
-					);
-				})}
-			</ul>
+			<Board posts={posts} categories={categories} />
 		</>
 	);
 };

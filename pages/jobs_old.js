@@ -15,10 +15,10 @@ const Jobs = (props) => {
 				</Col>
 			</Row>
 
-			<ul class="nav nav-tabs" id="myTab" role="tablist">
-				<li class="nav-item" role="presentation">
+			<ul className="nav nav-tabs" id="myTab" role="tablist">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link active"
+						className="nav-link active"
 						id="home-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#home"
@@ -30,9 +30,9 @@ const Jobs = (props) => {
 						전체
 					</button>
 				</li>
-				<li class="nav-item" role="presentation">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link"
+						className="nav-link"
 						id="profile-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#profile"
@@ -44,9 +44,9 @@ const Jobs = (props) => {
 						Profile
 					</button>
 				</li>
-				<li class="nav-item" role="presentation">
+				<li className="nav-item" role="presentation">
 					<button
-						class="nav-link"
+						className="nav-link"
 						id="contact-tab"
 						data-bs-toggle="tab"
 						data-bs-target="#contact"
@@ -59,8 +59,8 @@ const Jobs = (props) => {
 					</button>
 				</li>
 			</ul>
-			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+			<div className="tab-content" id="myTabContent">
+				<div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 					<table className="table table-striped table-hover">
 						<thead>
 							<tr>
@@ -90,10 +90,10 @@ const Jobs = (props) => {
 						</tbody>
 					</table>
 				</div>
-				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 					...
 				</div>
-				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				<div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 					...
 				</div>
 			</div>

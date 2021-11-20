@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Gallery from '../components/home/Gallery';
 import HomeTable from '../components/home/HomeTable';
 
-export default function Home(props) {
+const Home = (props) => {
 	const menu = [
 		{ title: '구인', props: props.jobs },
 		{ title: '사고&팔고', props: props.jobs },
@@ -38,9 +38,12 @@ export default function Home(props) {
 			</Row>
 		</Container>
 	);
-}
+};
+
 //fetch before rednering
 export async function getServerSideProps(context) {
 	const jobs = await axios.get('https://korean-community.herokuapp.com/api/ca/la/find-jobs/1').then((res) => res.data);
 	return { props: { jobs } };
 }
+
+export default Home;
