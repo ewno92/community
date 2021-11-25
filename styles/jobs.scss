@@ -2,4 +2,12 @@
   span {
     font-size: 12px;
   }
+  button {
+    color: black;
+  }
+  .nav-item {
+    .active {
+      font-weight: bold;
+    }
+  }
 }
