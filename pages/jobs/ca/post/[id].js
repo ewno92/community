@@ -9,7 +9,7 @@ import { BsEyeFill } from "react-icons/bs";
 const Index = ({ post }) => {
   console.log(post);
   return (
-    <Container>
+    <Container style={{ maxWidth: "800px" }}>
       <Row>
         <Col>
           <h2 className="my-2">{post.title}</h2>

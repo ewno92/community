@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
+import { BsEyeFill } from "react-icons/bs";
 
 const HomeTable = ({ title, jobs }) => {
   const jobsCopy = [...jobs];
@@ -28,7 +29,7 @@ const HomeTable = ({ title, jobs }) => {
                 style={{ cursor: "pointer", fontSize: "12px" }}
                 onClick={() => Router.push(`/jobs/ca/post/${job.id}`)}
               >
-                <p>{job.title}</p>
+                <p>{job.title} </p>
               </td>
             </tr>
           );
