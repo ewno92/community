@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import Router from "next/router";
 const Jobs = (props) => {
+  console.log(props);
   const [search, setSearch] = useState([""]);
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -56,7 +57,7 @@ const Jobs = (props) => {
             aria-controls="home"
             aria-selected="true"
           >
-            전체
+            전체 ({props.jobs.length})
           </button>
         </li>
 
@@ -74,7 +75,7 @@ const Jobs = (props) => {
                 aria-controls="profile"
                 aria-selected="false"
               >
-                {key}
+                {key} ({key.length})
               </button>
             </li>
           );
