@@ -8,7 +8,7 @@ import HomeTable from "../components/home/HomeTable";
 const Home = (props) => {
   const menu = [
     { title: "구인", props: props.jobs, link: "jobs" },
-    { title: "사고&팔고", props: props.sales, link: "sales" },
+    { title: "사고&팔고", props: props.sale, link: "sale" },
     { title: "비지니스", props: props.realEstate },
     // { title: "사고&팔고", props: props.jobs },
     // { title: "비지니스", props: props.jobs },
@@ -50,7 +50,7 @@ export async function getServerSideProps(context) {
   const jobs = await axios
     .get("https://korean-community.herokuapp.com/api/ca/la/find-jobs/1")
     .then((res) => res.data);
-  const sales = await axios
+  const sale = await axios
     .get("https://korean-community.herokuapp.com/api/ca/la/sales/:id")
     .then((res) => res.data);
   const realEstate = await axios
@@ -60,7 +60,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       jobs,
-      sales,
+      sale,
       realEstate,
     },
   };
