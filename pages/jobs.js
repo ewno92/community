@@ -75,7 +75,7 @@ const Jobs = (props) => {
                 aria-controls="profile"
                 aria-selected="false"
               >
-                {key} ({key.length})
+                {key}({key.length})
               </button>
             </li>
           );
