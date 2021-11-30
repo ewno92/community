@@ -62,9 +62,9 @@ const Jobs = (props) => {
         </li>
 
         {/* tab menu */}
-        {menu.map((key) => {
+        {menu.map((key, i) => {
           return (
-            <li className="nav-item" role="presentation">
+            <li key={i} className="nav-item" role="presentation">
               <button
                 className="nav-link"
                 id={`"${key}-tab"`}
@@ -122,9 +122,10 @@ const Jobs = (props) => {
           </table>
         </div>
 
-        {menu.map((key) => {
+        {menu.map((key, i) => {
           return (
             <div
+              key={i}
               className="tab-pane fade"
               id={key}
               role="tabpanel"
