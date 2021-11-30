@@ -105,7 +105,11 @@ const Sale = (props) => {
                   onClick={() => Router.push(`/jobs/ca/post/${job.id}`)}
                 >
                   <td>
-                    <span>{job.title}</span>
+                    <span>
+                      {job.title}
+
+                      <img src={job.img} alt="" />
+                    </span>
                   </td>
                   <td>
                     <span>{job.location}</span>
