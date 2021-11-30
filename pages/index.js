@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Gallery from "../components/home/Gallery";
 import HomeTable from "../components/home/HomeTable";
-
+import Loading from "../components/Loading";
 const Home = (props) => {
   const menu = [
     { title: "구인", props: props.jobs, link: "jobs" },

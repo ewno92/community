@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import Router from "next/router";
+
 const Sale = (props) => {
   console.log(props);
+
   const [search, setSearch] = useState([""]);
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -18,7 +20,11 @@ const Sale = (props) => {
   const createMenu = () => {
     let temp = new Set();
     props.jobs.forEach((post) => {
-      temp.add(post.type);
+      if (post.type.includes("/")) {
+        temp.add(post.type.replace("/", "-"));
+      } else {
+        temp.add(post.type);
+      }
     });
     setMenu([...temp]);
   };
@@ -53,25 +59,28 @@ const Sale = (props) => {
         </li>
 
         {/* tab menu */}
-        {menu.map((key) => {
+        {menu.map((item, i) => {
           return (
-            <li className="nav-item" role="presentation">
+            <li key={i} className="nav-item" role="presentation">
               <button
+                key={i}
                 className="nav-link"
-                id={`"${key}-tab"`}
+                id={`"${item}-tab"`}
                 data-bs-toggle="tab"
-                data-bs-target={`#${key}`}
+                data-bs-target={`#${item}`}
                 type="button"
                 role="tab"
                 aria-controls="profile"
                 aria-selected="false"
               >
-                {key}({key.length})
+                {item}
               </button>
             </li>
           );
         })}
       </ul>
+
+      {/* home tab */}
       <div className="tab-content" id="myTabContent">
         <div
           className="tab-pane fade show active"
@@ -113,13 +122,15 @@ const Sale = (props) => {
           </table>
         </div>
 
-        {menu.map((key) => {
+        {/* tab menu */}
+        {menu.map((menuItem, i) => {
           return (
             <div
+              key={i}
               className="tab-pane fade"
-              id={key}
+              id={menuItem}
               role="tabpanel"
-              aria-labelledby={`${key}-tab`}
+              aria-labelledby={`${menuItem}-tab`}
             >
               <table className="table table-striped table-hover">
                 <thead>
@@ -132,7 +143,7 @@ const Sale = (props) => {
                 </thead>
                 <tbody>
                   {props.jobs.map((job) => {
-                    if (job.type === key) {
+                    if (job.type.replace("/", "-") === menuItem) {
                       return (
                         <tr
                           key={job.id}
@@ -168,6 +179,7 @@ export async function getServerSideProps(context) {
   const sales = await axios
     .get("https://korean-community.herokuapp.com/api/ca/la/sales/:id")
     .then((res) => res.data);
+
   return { props: { jobs: sales } };
 }
 
